@@ -33,19 +33,19 @@ class ViewController: UIViewController {
     }
 
     
-    func optDemo_addButton(view:UIView) {
+    func optDemo_addButton(_ view:UIView) {
         
-        let button   = UIButton(type: UIButtonType.System) as UIButton;
+        let button   = UIButton(type: UIButtonType.system) as UIButton;
 
-        button.frame = CGRectMake(100, 100, 100, 50);
+        button.frame = CGRect(x: 100, y: 100, width: 100, height: 50);
         
-        button.backgroundColor = UIColor.greenColor()
+        button.backgroundColor = UIColor.green
         
         button.translatesAutoresizingMaskIntoConstraints = false;
         
-        button.setTitle("Test Button", forState: UIControlState.Normal);
+        button.setTitle("Test Button", for: UIControlState());
   
-        button.addTarget(self, action: "myButton_response:", forControlEvents:  .TouchUpInside);
+        button.addTarget(self, action: #selector(ViewController.myButton_response(_:)), for:  .touchUpInside);
 
         view.addSubview(button);
         
@@ -55,23 +55,23 @@ class ViewController: UIViewController {
     }
     
 
-    func makeAMonsterousLabel(view:UIView) {
+    func makeAMonsterousLabel(_ view:UIView) {
         
         let myFirstLabel = UILabel();
         let myFirstButton = UIButton();
         
         myFirstLabel.text = "I made a label on the screen #toogood4you";
         myFirstLabel.font = UIFont(name: "MarkerFelt-Thin", size: 45);
-        myFirstLabel.textColor = UIColor.redColor();
-        myFirstLabel.textAlignment = .Center;
+        myFirstLabel.textColor = UIColor.red;
+        myFirstLabel.textAlignment = .center;
         myFirstLabel.numberOfLines = 5;
         
-        myFirstLabel.frame = CGRectMake(15, 54, 300, 500);
-        myFirstButton.setTitle("✸", forState: .Normal);
-        myFirstButton.setTitleColor(UIColor.blueColor(), forState: .Normal);
-        myFirstButton.frame = CGRectMake(15, 200, 300, 500);
+        myFirstLabel.frame = CGRect(x: 15, y: 54, width: 300, height: 500);
+        myFirstButton.setTitle("✸", for: UIControlState());
+        myFirstButton.setTitleColor(UIColor.blue, for: UIControlState());
+        myFirstButton.frame = CGRect(x: 15, y: 200, width: 300, height: 500);
         
-        myFirstButton.addTarget(self, action: "pressed:", forControlEvents: .TouchUpInside);
+        myFirstButton.addTarget(self, action: #selector(ViewController.pressed(_:)), for: .touchUpInside);
 
         myFirstLabel.translatesAutoresizingMaskIntoConstraints  = false;
         myFirstButton.translatesAutoresizingMaskIntoConstraints = false;
@@ -83,9 +83,9 @@ class ViewController: UIViewController {
     }
     
     
-    func pressed(sender: UIButton!) {
+    func pressed(_ sender: UIButton!) {
         let alertView = UIAlertView();
-        alertView.addButtonWithTitle("Ok");
+        alertView.addButton(withTitle: "Ok");
         alertView.title = "title";
         alertView.message = "message";
         alertView.show();
@@ -94,7 +94,7 @@ class ViewController: UIViewController {
     }
     
     
-    func myButton_response(sender: UIButton!) {
+    func myButton_response(_ sender: UIButton!) {
 
         print("Button Response fired. Game on!");
         
